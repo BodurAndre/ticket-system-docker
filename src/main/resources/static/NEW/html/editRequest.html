@@ -1,0 +1,76 @@
+<div class="form-container">
+    <div class="form">
+        <h2><i class="fas fa-edit"></i> Детали тикета</h2>
+        <form id="edit-request-form" action="#" method="POST">
+            <!-- Информация о пользователях -->
+            <div class="user-info">
+                <div class="info-item">
+                    <label>Создал:</label>
+                    <span id="creator-info">-</span>
+                </div>
+                <div class="info-item" id="closed-by-container" style="display: none;">
+                    <label>Закрыл:</label>
+                    <span id="closed-by-info">-</span>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="tema">Заголовок:</label>
+                    <input type="text" id="tema" name="tema" required readonly>
+                </div>
+                <div class="input-item">
+                    <label for="priority">Приоритет:</label>
+                    <select id="priority" name="priority" disabled required>
+                        <option value="" disabled selected>Выберите приоритет</option>
+                        <option value="low">Низкий</option>
+                        <option value="medium">Средний</option>
+                        <option value="high">Высокий</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="select-company">Компания:</label>
+                    <select id="select-company" name="companyId" required disabled>
+                        <option value="" disabled selected>Выберите компанию</option>
+                    </select>
+                </div>
+                <div class="input-item">
+                    <label for="select-server">Сервер:</label>
+                    <select id="select-server" name="serverId" required disabled>
+                        <option value="" disabled selected>Сначала выберите компанию</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="contacts">Контакты:</label>
+                    <input type="text" id="contacts" name="contacts" required readonly>
+                </div>
+                <div class="input-item">
+                    <label for="assignee-user">Исполнитель:</label>
+                    <select id="assignee-user" name="assigneeUserId" disabled>
+                        <option value="" disabled selected>Выберите исполнителя</option>
+                    </select>
+                </div>
+            </div>
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" required readonly></textarea>
+            
+            <div id="edit-buttons" class="button-group"></div>
+            <!-- Секция комментариев -->
+            <div class="comments-section">
+                <h3><i class="fas fa-comments"></i> Комментарии</h3>
+                <div id="comments-container" class="comments-container">
+                    <!-- Комментарии будут загружаться здесь -->
+                </div>
+                <div class="comment-form">
+                    <textarea id="comment-text" placeholder="Введите комментарий..." rows="3"></textarea>
+                    <button id="send-comment" class="submit-btn">Отправить комментарий</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

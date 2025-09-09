@@ -1,0 +1,516 @@
+/* Стили для страницы редактирования тикета */
+.form-container {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+}
+
+.form {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: none;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.input-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-item label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.input-item input,
+.input-item select {
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.input-item input:focus,
+.input-item select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.input-item input[readonly] {
+    background-color: #f8f9fa;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.input-item select[disabled] {
+    background-color: #f8f9fa;
+    color: #666;
+    cursor: not-allowed;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+textarea[readonly] {
+    background-color: #f8f9fa;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* Стили для статусов */
+.status-display {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 14px;
+}
+
+.status-open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-closed {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Стили для кнопок */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 150px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn.save-mode {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+/* Стили для информации о пользователях */
+.user-info {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: #495057;
+    min-width: 120px;
+}
+
+.info-item span {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Стили для комментариев */
+.comments-section {
+    margin: 30px 0;
+    border-top: 2px solid #e9ecef;
+    padding-top: 20px;
+}
+
+.comments-section h3 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.comments-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f8f9fa;
+}
+
+.comment-item {
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid #667eea;
+    max-width: 80%;
+}
+
+.comment-item.my-comment {
+    margin-left: auto;
+    border-left: 4px solid #28a745;
+    background: #f8fff9;
+}
+
+.comment-item.system-comment {
+    margin: 0 auto 12px;
+    max-width: 90%;
+    border-left: 4px solid #ffc107;
+    background: #fffbf0;
+    text-align: left;
+    font-style: normal;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.comment-item.system-comment .comment-text {
+    color: #856404;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.comment-item.system-comment .comment-details {
+    color: #856404;
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.comment-item.system-comment .change-item {
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+.comment-item.other-comment {
+    margin-right: auto;
+    border-left: 4px solid #667eea;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #333;
+}
+
+.comment-date {
+    color: #999;
+}
+
+.comment-text {
+    color: #333;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.3s;
+}
+
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.comment-form button {
+    align-self: flex-end;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.comment-form button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.comment-form button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-body p {
+    margin: 0 0 15px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.modal-body textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 8px;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 100px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.modal-body textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.modal-footer {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    border-top: 1px solid #e9ecef;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+.btn-secondary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .input-group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .form {
+        padding: 20px;
+    }
+    
+    .form-container {
+        padding: 10px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Адаптивные стили для комментариев */
+    .comments-container {
+        max-height: 300px;
+    }
+    
+    .comment-form button {
+        align-self: stretch;
+    }
+
+    /* Адаптивные стили для модального окна */
+    .modal-content {
+        width: 95%;
+        margin: 10px;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+} 

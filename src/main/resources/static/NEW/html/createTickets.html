@@ -1,0 +1,136 @@
+<div class="form-container">
+    <div class="form">
+        <h2><i class="fas fa-plus-circle"></i> Создать тикет</h2>
+        <form id="create-request-form" action="#" method="POST">
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="tema">Заголовок:</label>
+                    <input type="text" id="tema" name="tema" placeholder="Введите тему" required>
+                </div>
+                <div class="input-item">
+                    <label for="priority">Приоритет:</label>
+                    <select id="priority" name="priority" required>
+                        <option value="" disabled selected>Выберите приоритет</option>
+                        <option value="low">Низкий</option>
+                        <option value="medium">Средний</option>
+                        <option value="high">Высокий</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="select-company">Компания:</label>
+                    <div class="select-with-button">
+                        <select id="select-company" name="companyId" required>
+                            <option value="" disabled selected>Выберите компанию</option>
+                        </select>
+                        <button type="button" id="add-company-btn" class="add-btn" title="Добавить новую компанию">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <label for="select-server">Сервер:</label>
+                    <div class="select-with-button">
+                        <select id="select-server" name="serverId" required>
+                            <option value="" disabled selected>Сначала выберите компанию</option>
+                        </select>
+                        <button type="button" id="add-server-btn" class="add-btn" title="Добавить новый сервер" disabled>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-item">
+                    <label for="select-contacts">Контакты:</label>
+                    <div class="select-with-button">
+                        <select id="select-contacts" name="contacts" required>
+                            <option value="" disabled selected>Выберите номер телефона</option>
+                        </select>
+                        <button type="button" id="add-phone-btn" class="add-btn" title="Добавить новый номер телефона" disabled>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <label for="assignee-user">Назначить на:</label>
+                    <select id="assignee-user" name="assigneeUserId">
+                        <option value="" disabled selected>Выберите исполнителя</option>
+                    </select>
+                </div>
+            </div>
+            <label for="description">Описание:</label>
+            <textarea id="description" name="description" placeholder="Введите описание" required></textarea>
+            <button id="open-request" type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Создать
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- Модальное окно для создания компании -->
+<div id="company-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-building"></i> Создать новую компанию</h3>
+            <span class="close" id="close-company-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="create-company-form">
+                <div class="input-item">
+                    <label for="new-company-name">Название компании:</label>
+                    <input type="text" id="new-company-name" name="companyName" placeholder="Введите название компании" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" id="cancel-company">Отмена</button>
+                    <button type="submit" class="submit-btn">Создать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для создания сервера -->
+<div id="server-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-server"></i> Создать новый сервер</h3>
+            <span class="close" id="close-server-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="create-server-form">
+                <div class="input-item">
+                    <label for="new-server-name">Название сервера:</label>
+                    <input type="text" id="new-server-name" name="serverName" placeholder="Введите название сервера" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" id="cancel-server">Отмена</button>
+                    <button type="submit" class="submit-btn">Создать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Модальное окно для создания номера телефона -->
+<div id="phone-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-phone"></i> Создать новый номер телефона</h3>
+            <span class="close" id="close-phone-modal">&times;</span>
+        </div>
+        <div class="modal-body">
+            <form id="create-phone-form">
+                <div class="input-item">
+                    <label for="new-phone-number">Номер телефона:</label>
+                    <input type="tel" id="new-phone-number" name="phoneNumber" placeholder="Введите номер телефона" required>
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" class="cancel-btn" id="cancel-phone">Отмена</button>
+                    <button type="submit" class="submit-btn">Создать</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

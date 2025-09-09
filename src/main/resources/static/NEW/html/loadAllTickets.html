@@ -1,0 +1,85 @@
+<div class="table-container">
+    <div class="table-header">
+        <h2><i class="fas fa-list"></i> Список тикетов</h2>
+        <div class="table-actions">
+            <div class="filter-group">
+                <label for="filter-status">Статус:</label>
+                <select id="filter-status" class="modern-filter">
+                    <option value="ALL">Все статусы</option>
+                    <option value="OPEN">Открытые</option>
+                    <option value="CLOSED">Закрытые</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-priority">Приоритет:</label>
+                <select id="filter-priority" class="modern-filter">
+                    <option value="ALL">Любой приоритет</option>
+                    <option value="HIGH">Высокий</option>
+                    <option value="MEDIUM">Средний</option>
+                    <option value="LOW">Низкий</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-date">Дата:</label>
+                <select id="filter-date" class="modern-filter">
+                    <option value="ALL">Все даты</option>
+                    <option value="TODAY">Сегодня</option>
+                    <option value="YESTERDAY">Вчера</option>
+                    <option value="WEEK">За неделю</option>
+                    <option value="MONTH">За месяц</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-company">Компания:</label>
+                <select id="filter-company" class="modern-filter">
+                    <option value="ALL">Все компании</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-creator">Создал:</label>
+                <select id="filter-creator" class="modern-filter">
+                    <option value="ALL">Все</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-assignee">Исполнитель:</label>
+                <select id="filter-assignee" class="modern-filter">
+                    <option value="ALL">Все</option>
+                </select>
+            </div>
+            <a href="#createTickets" class="refresh-btn">
+                <i class="fas fa-plus"></i> Создать тикет
+            </a>
+            <button class="refresh-btn" onclick="refreshTable()">
+                <i class="fas fa-sync-alt"></i> Обновить
+            </button>
+            <button class="refresh-btn" id="reset-filters-btn">
+                <i class="fas fa-times"></i> Сбросить фильтры
+            </button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <div class="table-scroll-container">
+            <table class="modern-table" id="ticketsTable">
+                <thead>
+                <tr>
+                    <th class="request" data-sort="id" style="width: 40px;"><i class="fas fa-hashtag"></i> ID <span class="sort-arrow" id="sort-id"></span></th>
+                    <th class="date" data-sort="data" style="width: 100px;"><i class="fas fa-calendar"></i> Дата <span class="sort-arrow" id="sort-data"></span></th>
+                    <th class="time" data-sort="time" style="width: 80px;"><i class="fas fa-clock"></i> Время <span class="sort-arrow" id="sort-time"></span></th>
+                    <th class="tema" data-sort="tema" style="width: 200px;"><i class="fas fa-tag"></i> Тема <span class="sort-arrow" id="sort-tema"></span></th>
+                    <th class="company" data-sort="company" style="width: 150px;"><i class="fas fa-building"></i> Компания <span class="sort-arrow" id="sort-company"></span></th>
+                    <th class="priority" data-sort="priority" style="width: 100px;"><i class="fas fa-exclamation-triangle"></i> Приоритет <span class="sort-arrow" id="sort-priority"></span></th>
+                    <th class="from" data-sort="from" style="width: 120px;"><i class="fas fa-user"></i> От <span class="sort-arrow" id="sort-from"></span></th>
+                    <th class="assignee" data-sort="assignee" style="width: 120px;"><i class="fas fa-user-check"></i> Исполнитель <span class="sort-arrow" id="sort-assignee"></span></th>
+                    <th class="status" data-sort="status" style="width: 100px;"><i class="fas fa-info-circle"></i> Статус <span class="sort-arrow" id="sort-status"></span></th>
+                    <th class="edit" style="width: 100px;"><i class="fas fa-cogs"></i> Действие</th>
+                </tr>
+                </thead>
+                <tbody id="tickets-tbody">
+                <!-- Данные будут загружены через JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

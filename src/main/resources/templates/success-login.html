@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перенаправление...</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Получаем роль из шаблонной переменной Spring
+            const role = new URLSearchParams(window.location.search).get("role");
+
+            if (role) {
+                localStorage.setItem("role", role);  // Сохраняем роль
+                window.location.href = "/";  // Перенаправляем на главную страницу
+            }
+        });
+    </script>
+</head>
+<body>
+<p>Авторизация успешна! Перенаправление...</p>
+</body>
+</html>

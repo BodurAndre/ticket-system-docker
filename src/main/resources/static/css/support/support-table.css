@@ -1,0 +1,241 @@
+/* Современные стили для таблицы тикетов */
+
+/* Ширина столбцов */
+.modern-table th.request, .modern-table td.request {
+    width: 80px;
+    text-align: center;
+}
+
+.modern-table th.date, .modern-table td.date {
+    width: 120px;
+    text-align: center;
+}
+
+.modern-table th.time, .modern-table td.time {
+    width: 100px;
+    text-align: center;
+}
+
+.modern-table th.tema, .modern-table td.tema {
+    min-width: 200px;
+    text-align: left;
+}
+
+.modern-table th.priority, .modern-table td.priority {
+    width: 120px;
+    text-align: center;
+}
+
+.modern-table th.from, .modern-table td.from {
+    width: 120px;
+    text-align: center;
+}
+
+.modern-table th.status, .modern-table td.status {
+    width: 120px;
+    text-align: center;
+}
+
+.modern-table th.edit, .modern-table td.edit {
+    width: 120px;
+    text-align: center;
+}
+
+/* Стили для кнопок действий */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #6c757d;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+}
+
+.action-btn:hover {
+    background: rgba(52, 152, 219, 0.1);
+    color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.action-btn.edit {
+    color: #f39c12;
+}
+
+.action-btn.delete {
+    color: #e74c3c;
+}
+
+.action-btn:hover.edit {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+}
+
+.action-btn:hover.delete {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+/* Стили для статусов */
+.status-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.status-open {
+    background: rgba(52, 152, 219, 0.1);
+    color: #2980b9;
+    border: 1px solid rgba(52, 152, 219, 0.3);
+}
+
+.status-closed {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+.status-pending {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+/* Стили для приоритетов */
+.priority-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+.priority-high {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+.priority-medium {
+    background: rgba(243, 156, 18, 0.1);
+    color: #f39c12;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+.priority-low {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    border: 1px solid rgba(39, 174, 96, 0.3);
+}
+
+/* Анимации для строк таблицы */
+.modern-table tbody tr {
+    animation: slideIn 0.5s ease-out;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.modern-table tbody tr:hover {
+    background: rgba(52, 152, 219, 0.08);
+    box-shadow: 0 2px 8px rgba(52, 152, 219, 0.08);
+    /* Убираем появление скролла */
+    overflow: visible !important;
+}
+
+/* Убираем scrollbars на tbody/tr */
+.modern-table tbody {
+    overflow: visible !important;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Стили для пустого состояния */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6c757d;
+}
+
+.empty-state i {
+    font-size: 4em;
+    color: #dee2e6;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    margin: 0 0 10px 0;
+    color: #495057;
+}
+
+.empty-state p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* Адаптивность для таблицы */
+@media (max-width: 768px) {
+    .modern-table {
+        font-size: 0.9em;
+    }
+    
+    .modern-table th,
+    .modern-table td {
+        padding: 10px 8px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .action-btn {
+        min-width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+}
+
+/* Стили для загрузки */
+.loading-row {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.loading-row i {
+    font-size: 2em;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

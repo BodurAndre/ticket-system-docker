@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/register.css" />
+</head>
+<body>
+<p th:if="${param.error}" class="error">Registration failed</p>
+<form th:action="@{/register}" method="post" th:object="${user}">
+    <label for="email">Email</label>
+    <input type="email" id="email" th:field="*{email}" required />
+
+    <label for="password">Password</label>
+    <input type="password" id="password" th:field="*{password}" required />
+
+    <label for="first_name">First Name</label>
+    <input type="text" id="first_name" th:field="*{firstName}" required />
+
+    <label for="last_name">Last Name</label>
+    <input type="text" id="last_name" th:field="*{lastName}" required />
+
+    <label for="gender">Пол</label>
+    <select id="gender" th:field="*{gender}" class="dropdown" required>
+        <option value="" disabled selected>Выберите пол</option>
+        <option value="Male">Мужской</option>
+        <option value="Female">Женский</option>
+    </select>
+
+    <label for="date_of_birth">Дата рождения</label>
+    <input type="date" id="date_of_birth" th:field="*{dateOfBirth}" required /> <br />
+
+    <input type="submit" value="Зарегистрироваться" />
+    <div style="text-align: center;">
+        <a href="/login">Назад</a>
+    </div>
+    <p th:if="${errorMessage}" class="error" th:text="${errorMessage}">Пользователь такой существует</p>
+</form>
+</body>
+</html>

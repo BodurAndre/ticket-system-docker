@@ -1,0 +1,84 @@
+<div class="table-container">
+    <div class="table-header">
+        <h2><i class="fas fa-chart-bar"></i> Статистика системы</h2>
+        <div class="table-actions">
+            <button class="refresh-btn" onclick="refreshStatistics()">
+                <i class="fas fa-sync-alt"></i> Обновить
+            </button>
+        </div>
+    </div>
+
+    <div class="table-wrapper">
+        <div class="statistics-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="stats-total-tickets">0</div>
+                    <div class="stat-label">Всего тикетов</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="stats-open-tickets">0</div>
+                    <div class="stat-label">Открытые тикеты</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="stats-closed-tickets">0</div>
+                    <div class="stat-label">Закрытые тикеты</div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number" id="stats-total-users">0</div>
+                    <div class="stat-label">Пользователей</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="statistics-charts">
+            <div class="chart-container">
+                <h3>Тикеты по приоритетам</h3>
+                <div class="priority-stats">
+                    <div class="priority-item">
+                        <span class="priority-label low">Низкий</span>
+                        <span class="priority-count" id="stats-low-priority">0</span>
+                    </div>
+                    <div class="priority-item">
+                        <span class="priority-label medium">Средний</span>
+                        <span class="priority-count" id="stats-medium-priority">0</span>
+                    </div>
+                    <div class="priority-item">
+                        <span class="priority-label high">Высокий</span>
+                        <span class="priority-count" id="stats-high-priority">0</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Список пользователей</h3>
+                <div class="users-list" id="users-list">
+                    <div class="user-item">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Загрузка данных...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

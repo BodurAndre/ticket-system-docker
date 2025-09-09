@@ -1,0 +1,48 @@
+<div class="table-container">
+    <div class="table-header">
+        <h2><i class="fas fa-users"></i> Список пользователей</h2>
+        <div class="table-actions">
+            <div class="filter-group">
+                <label for="filter-role">Роль:</label>
+                <select id="filter-role" class="modern-filter">
+                    <option value="ALL">Любая роль</option>
+                    <option value="ADMIN">Админ</option>
+                    <option value="USER">Пользователь</option>
+                    <option value="PROCESSOR">Оператор</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="filter-gender">Пол:</label>
+                <select id="filter-gender" class="modern-filter">
+                    <option value="ALL">Любой пол</option>
+                    <option value="MALE">Мужской</option>
+                    <option value="FEMALE">Женский</option>
+                </select>
+            </div>
+            <a href="#createUser" class="refresh-btn">
+                <i class="fas fa-user-plus"></i> Создать пользователя
+            </a>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <div class="table-scroll-container">
+            <table class="modern-table" id="usersTable">
+                <thead>
+                <tr>
+                    <th class="request" data-sort="id"><i class="fas fa-hashtag"></i> ID <span class="sort-arrow" id="sort-id"></span></th>
+                    <th class="email" data-sort="email"><i class="fas fa-envelope"></i> Email <span class="sort-arrow" id="sort-email"></span></th>
+                    <th class="firstName" data-sort="firstName"><i class="fas fa-user"></i> Имя <span class="sort-arrow" id="sort-firstName"></span></th>
+                    <th class="lastName" data-sort="lastName"><i class="fas fa-user"></i> Фамилия <span class="sort-arrow" id="sort-lastName"></span></th>
+                    <th class="gender" data-sort="gender"><i class="fas fa-venus-mars"></i> Пол <span class="sort-arrow" id="sort-gender"></span></th>
+                    <th class="role" data-sort="role"><i class="fas fa-user-tag"></i> Роль <span class="sort-arrow" id="sort-role"></span></th>
+                    <th class="edit"><i class="fas fa-cogs"></i> Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Удаляю модальное окно для удаления пользователя, оно будет создаваться динамически через JS -->

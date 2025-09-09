@@ -1,0 +1,266 @@
+/* Стили для страницы списка пользователей */
+.table-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.table-header h2 {
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.table-actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 500;
+}
+
+.modern-filter {
+    padding: 8px 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+.modern-filter:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.refresh-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.table-wrapper {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* Контейнер для горизонтальной прокрутки */
+.table-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch; /* Для плавной прокрутки на iOS */
+}
+
+.modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 900px; /* Минимальная ширина таблицы */
+}
+
+.modern-table th {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 15px 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+    border-bottom: 2px solid #e1e5e9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    white-space: nowrap; /* Предотвращаем перенос текста в заголовках */
+}
+
+.modern-table th:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.modern-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f3f4;
+    vertical-align: middle;
+    white-space: nowrap; /* Предотвращаем перенос текста в ячейках */
+}
+
+.modern-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Стили для сортировки */
+.sort-arrow {
+    margin-left: 5px;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.sort-arrow.active {
+    opacity: 1;
+}
+
+.sort-arrow::after {
+    content: '↕';
+    font-size: 12px;
+}
+
+.sort-arrow.asc::after {
+    content: '↑';
+    color: #667eea;
+}
+
+.sort-arrow.desc::after {
+    content: '↓';
+    color: #667eea;
+}
+
+/* Стили для ролей */
+.role-admin {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.role-user {
+    background: #d1ecf1;
+    color: #0c5460;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.role-processor {
+    background: #fff3cd;
+    color: #856404;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Стили для пола */
+.gender-male {
+    background: #d1ecf1;
+    color: #0c5460;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.gender-female {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Кнопки действий */
+.action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    margin-right: 5px;
+}
+
+.action-btn:hover {
+    background-color: #e9ecef;
+}
+
+.action-btn.edit {
+    color: #007bff;
+}
+
+.action-btn.delete {
+    color: #dc3545;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 10px;
+    }
+    
+    .table-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .table-actions {
+        justify-content: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .filter-group {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .modern-table {
+        font-size: 12px;
+        min-width: 800px; /* Уменьшаем минимальную ширину для мобильных */
+    }
+    
+    .modern-table th,
+    .modern-table td {
+        padding: 8px 6px;
+    }
+    
+    /* Индикатор прокрутки */
+    .table-scroll-container::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 20px;
+        background: linear-gradient(to right, transparent, rgba(255,255,255,0.8));
+        pointer-events: none;
+    }
+} 
